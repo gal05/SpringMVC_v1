@@ -2,72 +2,49 @@ package com.guerra.tecsup.model;
 
 public class Login {
 
-	
-	private String username;
-	private String password;
-	private String grant_type="password";
-	private String client_id="2";
-	private String client_secret="q03flHoux0KNekRK0ICtEZ2CjfBTIDwGADx4094Y";
-	
-	
-
-	@Override
-	public String toString() {
-		return "Login [username=" + username + ", password=" + password + ", grant_type=" + grant_type + ", client_id="
-				+ client_id + ", client_secret=" + client_secret + "]";
-	}
+private String token_type;
+private String expires_in;
+private String access_token;
+private String refresh_token;
 
 
-	public Login(String username, String password, String grant_type, String client_id, String client_secret) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.grant_type = grant_type;
-		this.client_id = client_id;
-		this.client_secret = client_secret;
-	}
+
+public Login() {
+	super();
+}
+
+public String getToken_type() {
+	return token_type;
+}
+public void setToken_type(String token_type) {
+	this.token_type = token_type;
+}
+public String getExpires_in() {
+	return expires_in;
+}
+public void setExpires_in(String expires_in) {
+	this.expires_in = expires_in;
+}
+public String getAccess_token() {
+	return access_token;
+}
+public void setAccess_token(String access_token) {
+	this.access_token = access_token;
+}
+public String getRefresh_token() {
+	return refresh_token;
+}
+public void setRefresh_token(String refresh_token) {
+	this.refresh_token = refresh_token;
+}
+@Override
+public String toString() {
+	return "Login [token_type=" + token_type + ", expires_in=" + expires_in + ", access_token=" + access_token
+			+ ", refresh_token=" + refresh_token + "]";
+}
 
 
-	public Login() {
-		super();
-	}
 
-
-	public String getUsername() {
-		return username;
-	}
-
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-
-	public String getGrant_type() {
-		return grant_type;
-	}
-
-
-	public String getClient_secret() {
-		return client_secret;
-	}
-
-
-	public String getClient_id() {
-		return client_id;
-	}
-	
-	
 	
 	
 	
