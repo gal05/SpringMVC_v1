@@ -1,4 +1,4 @@
-package com.guerra.tecsup.dao2;
+package com.guerra.tecsup.dao;
 
 import java.util.List;
 

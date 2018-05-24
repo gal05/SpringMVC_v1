@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -70,14 +72,14 @@
 									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
 								</div>
                                 or
-								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-										<div class="form-group">
+								 <form method="POST" action="login">
+									  <div class="form-group">
 											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
-											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+											 <input type="text" name="username"/>
 										</div>
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputPassword2">Password</label>
-											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+											 <input type="password" name="password" />
                                              <div class="help-block text-right"><a href="">Forget the password ?</a></div>
 										</div>
 										<div class="form-group">
@@ -95,12 +97,18 @@
 							</div>
 					 </div>
 				</li>
+				<font color="red">Mensaje : ${login}</font>
+
 			</ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<nav class="junbotron text-center" >
+<font color="red">Mensaje : ${login}</font>
+</nav>
+
   
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>

@@ -1,11 +1,20 @@
 package com.guerra.tecsup.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Login {
 
-private String token_type;
-private String expires_in;
-private String access_token;
-private String refresh_token;
+	@SerializedName("token_type")
+	private String token_type;
+	
+	@SerializedName("expires_in")
+	private String expires_in;
+	
+	@SerializedName("access_token")
+	private String access_token;
+	
+	@SerializedName("refresh_token")
+	private String refresh_token;
 
 
 
