@@ -1,5 +1,6 @@
 package com.guerra.tecsup;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
@@ -116,9 +117,14 @@ public class HomeController {
 		logger.info(github.toString());
 		ModelAndView modelAndView = null;
 		Login login=null;
-		boolean esono;
+		boolean esono = false;
 		
-		esono=verificacionLogin(github.getUsername(), github.getPassword());
+		try {
+			esono=verificacionLogin(github.getUsername(), github.getPassword());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if (esono==true) {
 			logger.info(github.toString());
 			modelAndView = new ModelAndView("redirect:/to/menu", "command", github);
@@ -139,15 +145,34 @@ public class HomeController {
 	
 	
 
-	private boolean verificacionLogin(String username, String password)
+	private boolean verificacionLogin(String username, String password) throws Exception
 	{
-		
+		Response<Login> response=null;
 		ApiService service = ApiServiceGenerator.createService(ApiService.class);
 
 	 	
         Call<Login> call = service.login(username, password, grant_type, client_id, client_secret);
+        
+        try {
+			response=call.execute();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        if (response.isSuccessful()) {
 
-        call.enqueue(new Callback<Login>() {
+            login = response.body();
+            System.out.println("Login from DAO " + login);
+            autenticado =true;
+
+        } else {
+            System.out.println( "onError: " + response.errorBody().string());
+            throw new Exception("Error en el servicio");
+            
+        }
+        
+        /*call.enqueue(new Callback<Login>() {
             @Override
             public void onResponse(Call<Login> call, Response<Login> response) {
             	
@@ -181,7 +206,7 @@ public class HomeController {
                 System.out.println("onFailure: " + t.toString());
             }
 
-        });
+        });*/
         return autenticado;
 	}
 	
