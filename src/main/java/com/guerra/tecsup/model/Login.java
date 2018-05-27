@@ -51,11 +51,6 @@ public String toString() {
 	return "Login [token_type=" + token_type + ", expires_in=" + expires_in + ", access_token=" + access_token
 			+ ", refresh_token=" + refresh_token + "]";
 }
-
-
-
-	
-	
 	
 	
 }

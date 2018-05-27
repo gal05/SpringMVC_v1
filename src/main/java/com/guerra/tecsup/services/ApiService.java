@@ -5,6 +5,7 @@ import java.util.List;
 import com.guerra.tecsup.model.Github;
 import com.guerra.tecsup.model.Login;
 import com.guerra.tecsup.model.Sede;
+import com.guerra.tecsup.model.User;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -22,6 +23,9 @@ public interface ApiService {
 
     @GET("api/sede")
     Call<List<Sede>> getSedes();
+    
+    @GET("api/listarUsuario")
+    Call<List<User>> getUsers();
     
     @FormUrlEncoded
     @POST("oauth/token")

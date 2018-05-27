@@ -18,9 +18,5 @@ public class Github {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-    
-    
-    
-
-    
+       
 }

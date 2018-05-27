@@ -6,51 +6,61 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<h1>funciona!!</h1>
-<table class="table table-bordered table-striped">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>nombre</th>
-							<th>ubicacion</th>
-							<!--  th>Dept</th -->
-							<th>Edit</th>
-							<th>Delete</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="sede" items="${sedes}">
-							<tr>
-								<td>${sede.id}</td>
-								<td>${sede.nombre}</td>
-								<td>${sede.ubicacion}</td>
-								<td><a
-									href="<%=request.getContextPath()%>/admin/emp/editform/${sede.id}"
-									class="btn btn-info btn-xs"> <i
-										class="glyphicon glyphicon-check"></i>Edit
-								</a></td>
-								<td><a
-									href="<%=request.getContextPath()%>/admin/emp/deleteform/${sede.id}"
-									class="btn btn-danger btn-xs"> <i
-										class="glyphicon glyphicon-trash"></i> Delete
-								</a></td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-				
-				
-				<div>
-				
-				</div>
+<title>Página Principal</title>
 
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
 
+  </head>
 
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="laboratorio.html">Reserva Laboratorios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="errores.html">Reporte Errores</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index2.html">Cerrar Sesión </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+             <img src="img/imagen3.jpg">
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto" >
+            <h2 class="text-faded mb-7">Nuestro sistema permitira realizar reserva de laboratorios y reporte de errores de manera sencilla y fácil</h2>
+          </div>
+        </div>
+      </div>
+    </header>
 </body>
 </html>

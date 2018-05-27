@@ -43,7 +43,7 @@ public class HomeController {
 	private Login login=null;
 	private String grant_type="password";
 	private int client_id=2;
-	private String client_secret="q03flHoux0KNekRK0ICtEZ2CjfBTIDwGADx4094Y";
+	private String client_secret="gBd87ZSFdOvjM1WWQn3bYkrIkfKywk6z2FBhEvJr";
 	private boolean autenticado=false;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -134,12 +134,6 @@ public class HomeController {
 		}
 		return modelAndView;
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 	
