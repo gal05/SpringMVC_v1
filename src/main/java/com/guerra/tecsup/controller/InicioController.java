@@ -27,7 +27,7 @@ public class InicioController {
 	@GetMapping("/to/menu")
 	public String list(@ModelAttribute("SpringWeb") Sede sedes, ModelMap model) {
 		
-		model.addAttribute("sedes", listarSedes());
+		//model.addAttribute("sedes", listarSedes());
 		
 
 		return "menu";

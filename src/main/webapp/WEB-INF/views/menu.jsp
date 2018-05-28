@@ -6,56 +6,68 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Menu</title>
+
+<link href="<c:url value="/resources/css/menu.css"/>" rel="stylesheet">
+
+
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
 </head>
 <body>
-<h1>funciona!!</h1>
-<table class="table table-bordered table-striped">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>nombre</th>
-							<th>ubicacion</th>
-							<!--  th>Dept</th -->
-							<th>Edit</th>
-							<th>Delete</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="sede" items="${sedes}">
-							<tr>
-								<td>${sede.id}</td>
-								<td>${sede.nombre}</td>
-								<td>${sede.ubicacion}</td>
-								<td><a
-									href="<%=request.getContextPath()%>/admin/emp/editform/${sede.id}"
-									class="btn btn-info btn-xs"> <i
-										class="glyphicon glyphicon-check"></i>Edit
-								</a></td>
-								<td><a
-									href="<%=request.getContextPath()%>/admin/emp/deleteform/${sede.id}"
-									class="btn btn-danger btn-xs"> <i
-										class="glyphicon glyphicon-trash"></i> Delete
-								</a></td>
-							</tr>
-						</c:forEach>
+<body>
+  <div class="menu">
+  <div class="btn trigger">
+    <span class="line"></span>
+  </div>
+  <div class="icons">
+    <div class="rotater">
+      <div class="btn btn-icon">
+        <i class="fa fa-codepen"></i>
+      </div>
+    </div>
+    <div class="rotater">
+      <div class="btn btn-icon">
+        <i class="fa fa-facebook"></i>
+      </div>
+    </div>
+    <div class="rotater">
+      <div class="btn btn-icon">
+        <i class="fa fa-google-plus"></i>
+      </div>
+    </div>
+    <div class="rotater">
+      <div class="btn btn-icon">
+        <i class="fa fa-twitter"></i>
+      </div>
+    </div>
+    <div class="rotater">
+      <div class="btn btn-icon">
+        <i class="fa fa-dribbble"></i>
+      </div>
+    </div>
+    <div class="rotater">
+      <div class="btn btn-icon">
+        <i class="fa fa-linkedin"></i>
+      </div>
+    </div>
+    <div class="rotater">
+      <div class="btn btn-icon">
+        <i class="fa fa-github"></i>
+      </div>
+    </div>
+    <div class="rotater">
+      <div class="btn btn-icon">
+        <i class="fa fa-behance"></i>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-					</tbody>
+    <script src="<c:url value="/resources/js/index.js"/>"></script>
 
-				</table>
-						
-						<div>
-						<h1>${login}</h1>
-						</div>				
-				
-				<div>
-				
-				</div>
-
-
-
-
-
-
+</body>
 </body>
 </html>
