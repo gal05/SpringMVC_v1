@@ -6,6 +6,7 @@ import com.guerra.tecsup.model.Github;
 import com.guerra.tecsup.model.InfoUser;
 import com.guerra.tecsup.model.Login;
 import com.guerra.tecsup.model.LoginOne;
+import com.guerra.tecsup.model.Reporte;
 import com.guerra.tecsup.model.Sede;
 
 import retrofit2.Call;
@@ -24,6 +25,10 @@ public interface ApiService {
 
     @GET("api/sede")
     Call<List<Sede>> getSedes();
+
+    @GET("api/reporte")
+    Call<List<Reporte>> getReportes();
+    
     
     @FormUrlEncoded
     @POST("oauth/token")

@@ -67,9 +67,10 @@
         <i class="fa fa-desktop"></i>
       </div>
     </div>
-    <div class="rotater">
-      <div class="btn btn-icon">
-        <i class="fa fa-bug"></i>
+    <div  class="rotater">
+      <div  class="btn btn-icon">
+        <a href="<%=request.getContextPath()%>/to/list/reportes">
+        <i class="fa fa-bug"></i></a>        
       </div>
     </div>
     <div class="rotater">
