@@ -34,27 +34,27 @@
     </div>
     <div class="rotater">
       <div class="btn btn-icon">
-        <i class="fa fa-google-plus"></i>
+        <i class="fa fa-history"></i>
       </div>
     </div>
     <div class="rotater">
       <div class="btn btn-icon">
-        <i class="fa fa-twitter"></i>
+        <i class="fa fa-area-chart "></i>
       </div>
     </div>
     <div class="rotater">
       <div class="btn btn-icon">
-        <i class="fa fa-dribbble"></i>
+        <i class="fa fa-desktop"></i>
       </div>
     </div>
     <div class="rotater">
       <div class="btn btn-icon">
-        <i class="fa fa-linkedin"></i>
+        <i class="fa fa-bug"></i>
       </div>
     </div>
     <div class="rotater">
       <div class="btn btn-icon">
-        <i class="fa fa-github"></i>
+        <i class="fa fa-users"></i>
       </div>
     </div>
     <div class="rotater">
