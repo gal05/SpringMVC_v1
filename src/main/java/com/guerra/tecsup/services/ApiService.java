@@ -3,6 +3,7 @@ package com.guerra.tecsup.services;
 import java.util.List;
 
 import com.guerra.tecsup.model.Github;
+import com.guerra.tecsup.model.InfoUser;
 import com.guerra.tecsup.model.Login;
 import com.guerra.tecsup.model.LoginOne;
 import com.guerra.tecsup.model.Sede;
@@ -41,7 +42,9 @@ public interface ApiService {
                                         @Field("client_id") int client_id,
     									@Field("client_secret") String client_secret);
     
-
+    @FormUrlEncoded
+    @POST("api/findUser")
+    Call<List<InfoUser>> finduser(@Field("id") int id);
     
     
     
