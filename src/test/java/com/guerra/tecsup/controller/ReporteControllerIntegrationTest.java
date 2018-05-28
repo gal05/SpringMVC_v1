@@ -1,7 +1,6 @@
 package com.guerra.tecsup.controller;
 
 
-
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.hasProperty;
@@ -30,7 +29,7 @@ import org.springframework.web.context.WebApplicationContext;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml")
 @WebAppConfiguration
-public class InicioControllerIntegrationTest {
+public class ReporteControllerIntegrationTest {
 
 	@Autowired
 	private WebApplicationContext wac;
@@ -48,17 +47,18 @@ public class InicioControllerIntegrationTest {
 	     
 	    Assert.assertNotNull(servletContext);
 	    Assert.assertTrue(servletContext instanceof MockServletContext);
-	    Assert.assertNotNull(wac.getBean("inicioController"));
+	    Assert.assertNotNull(wac.getBean("reporteController"));
 	}
 	
 	
 	@Test
 	public void list() throws Exception {
-		mockMvc.perform(get("/to/menu"))
+		mockMvc.perform(get("/to/list/reportes"))
 				.andExpect(status().isOk())
-				.andExpect(view().name("menu"))
-				.andExpect(forwardedUrl("/WEB-INF/views/menu.jsp"))
+				.andExpect(view().name("reporte/reporteList"))
+				.andExpect(forwardedUrl("/WEB-INF/views/reporte/reporteList.jsp"))
 				;
 	}
 	
 }
+
