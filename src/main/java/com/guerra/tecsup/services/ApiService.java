@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.guerra.tecsup.model.Github;
 import com.guerra.tecsup.model.Login;
+import com.guerra.tecsup.model.LoginOne;
 import com.guerra.tecsup.model.Sede;
 
 import retrofit2.Call;
@@ -32,9 +33,13 @@ public interface ApiService {
     									@Field("client_secret") String client_secret);
     
     
-
-    
-    
+    @FormUrlEncoded
+    @POST("api/login")
+    Call<Login> login2(@Field("username") String username,
+                                        @Field("password") String password,
+                                        @Field("grant_type") String grant_type,
+                                        @Field("client_id") int client_id,
+    									@Field("client_secret") String client_secret);
     
 
     

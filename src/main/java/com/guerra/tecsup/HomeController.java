@@ -22,6 +22,7 @@ import com.guerra.tecsup.exception.DAOException;
 import com.guerra.tecsup.exception.EmptyResultException;
 import com.guerra.tecsup.model.Github;
 import com.guerra.tecsup.model.Login;
+import com.guerra.tecsup.model.LoginOne;
 import com.guerra.tecsup.model.Sede;
 import com.guerra.tecsup.services.ApiService;
 import com.guerra.tecsup.services.ApiServiceGenerator;
@@ -38,9 +39,11 @@ import retrofit2.Response;
 @Controller
 public class HomeController {
 
-	
+	public static int idusurio;
 	
 	private Login login=null;
+	
+	
 	private String grant_type="password";
 	private int client_id=2;
 	private String client_secret="gBd87ZSFdOvjM1WWQn3bYkrIkfKywk6z2FBhEvJr";
@@ -76,7 +79,7 @@ public class HomeController {
 		logger.info("login()");
 		logger.info(github.toString());
 		ModelAndView modelAndView = null;
-		Login login=null;
+		//Login login=null;
 		boolean esono = false;
 		
 		try {
@@ -87,6 +90,9 @@ public class HomeController {
 		}
 		if (esono==true) {
 			logger.info(github.toString());
+			idusurio=login.getId();
+			//System.out.println("puto login"+login.getId());
+			//model.addAttribute("login", "dudasdasd");
 			modelAndView = new ModelAndView("redirect:/to/menu", "command", github);
 		}else {
 			model.addAttribute("login", "Usuario y/o clave incorrectos");
@@ -104,7 +110,7 @@ public class HomeController {
 		ApiService service = ApiServiceGenerator.createService(ApiService.class);
 
 	 	
-        Call<Login> call = service.login(username, password, grant_type, client_id, client_secret);
+        Call<Login> call = service.login2(username, password, grant_type, client_id, client_secret);
         
         try {
 			response=call.execute();
@@ -115,7 +121,7 @@ public class HomeController {
         
         if (response.isSuccessful()) {
 
-            login = response.body();
+            login =  response.body();
             System.out.println("Login from DAO " + login);
             autenticado =true;
 

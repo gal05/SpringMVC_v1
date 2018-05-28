@@ -39,9 +39,14 @@
 								</a></td>
 							</tr>
 						</c:forEach>
+
 					</tbody>
+
 				</table>
-				
+						
+						<div>
+						<h1>${login}</h1>
+						</div>				
 				
 				<div>
 				
