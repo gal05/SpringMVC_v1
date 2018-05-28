@@ -28,6 +28,7 @@ public class InicioController {
 	List<InfoUser> infoUser=null;
 	
 	private static final Logger logger = LoggerFactory.getLogger(InicioController.class);	
+	
 	@GetMapping("/to/menu")
 	public String list(@ModelAttribute("SpringWeb") InfoUser infoUser, ModelMap model) {
 		
