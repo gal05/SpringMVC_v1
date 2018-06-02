@@ -28,6 +28,9 @@ public interface ApiService {
 
     @GET("api/reporte")
     Call<List<Reporte>> getReportes();
+
+    @GET("api/reporte_v2")
+    Call<List<Reporte>> getReportes_v2();
     
     
     @FormUrlEncoded
