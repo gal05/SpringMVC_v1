@@ -9,10 +9,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.guerra.tecsup.HomeController;
-import com.guerra.tecsup.model.InfoUser;
-import com.guerra.tecsup.model.Reporte;
-import com.guerra.tecsup.model.Sede;
+
+import com.guerra.tecsup.model.Reportes_v2;
+
 import com.guerra.tecsup.services.ApiService;
 import com.guerra.tecsup.services.ApiServiceGenerator;
 
@@ -25,10 +24,10 @@ public class ReporteController {
 
 	private static final Logger logger = LoggerFactory.getLogger(ReporteController.class);
 	
-	List<Reporte> reportes=null;
+	List<Reportes_v2> reportes=null;
 	
 	@GetMapping("/to/list/reportes")
-	public String listReportes(@ModelAttribute("SpringWeb") Reporte reportes, ModelMap model) {
+	public String listReportes(@ModelAttribute("SpringWeb") Reportes_v2 reportes, ModelMap model) {
 		
 		//model.addAttribute("sedes", listarSedes());
 		//model.addAttribute("infoUser", infoUser(HomeController.idusurio));
@@ -39,16 +38,16 @@ public class ReporteController {
 	
 	
 	
-	private List<Reporte> listarReportes()
+	private List<Reportes_v2> listarReportes()
 	{
 		
 		ApiService service = ApiServiceGenerator.createService(ApiService.class);
 
-        Call<List<Reporte>> call = service.getReportes();
+        Call<List<Reportes_v2>> call = service.getReportes_v2();
 
-        call.enqueue(new Callback<List<Reporte>>() {
+        call.enqueue(new Callback<List<Reportes_v2>>() {
             @Override
-            public void onResponse(Call<List<Reporte>> call, Response<List<Reporte>> response) {
+            public void onResponse(Call<List<Reportes_v2>> call, Response<List<Reportes_v2>> response) {
                 try {
 
                     int statusCode = response.code();
@@ -73,7 +72,7 @@ public class ReporteController {
             }
 
             @Override
-            public void onFailure(Call<List<Reporte>> call, Throwable t) {
+            public void onFailure(Call<List<Reportes_v2>> call, Throwable t) {
             	System.out.println(t.toString());
                 System.out.println( t.getMessage());
             }

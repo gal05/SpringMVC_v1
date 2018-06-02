@@ -7,6 +7,7 @@ import com.guerra.tecsup.model.InfoUser;
 import com.guerra.tecsup.model.Login;
 import com.guerra.tecsup.model.LoginOne;
 import com.guerra.tecsup.model.Reporte;
+import com.guerra.tecsup.model.Reportes_v2;
 import com.guerra.tecsup.model.Sede;
 
 import retrofit2.Call;
@@ -30,7 +31,7 @@ public interface ApiService {
     Call<List<Reporte>> getReportes();
 
     @GET("api/reporte_v2")
-    Call<List<Reporte>> getReportes_v2();
+    Call<List<Reportes_v2>> getReportes_v2();
     
     
     @FormUrlEncoded

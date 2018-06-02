@@ -8,44 +8,42 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Reportes</title>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <link href="<c:url value="/resources/css/reporte.css"/>" rel="stylesheet">
 </head>
 <body>
 <div class="container" id="tourpackages-carousel">
       <div class="row">
-        <div class="col-lg-12"><h1><font color="#3498DB">Reportes ${fn:length(reportes)} </font> <a class="btn icon-btn btn-primary pull-right" href="<%=request.getContextPath()%>/to/menu"><span class="glyphicon btn-glyphicon glyphicon-hand-left img-circle"></span> Regresar</a></h1></div>
-        
-        
-        
-        <c:forEach var="rep" items="${reportes}">
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <div class="thumbnail">
-              <div class="caption">
-                <div class='col-lg-12'>
-                    <span class="glyphicon glyphicon-credit-card"></span>
-                    <span class="glyphicon glyphicon-trash pull-right text-primary"></span>
-                </div>
-                <div class='col-lg-12 well well-add-card'>
-                    <h4>Obs:  ${rep.observacion} </h4>
-                </div>
-                <div class='col-lg-12'>
-                    <p>aula: ${rep.aula_id} </p>
-                    <p class"text-muted">fecha:  ${rep.fecha} </p>
-                </div>
-                <button type="button" class="btn btn-primary btn-xs btn-update btn-add-card">Update</button>
-                <button type="button" class="btn btn-danger btn-xs btn-update btn-add-card">Vrify Now</button>
-                <span class='glyphicon glyphicon-exclamation-sign text-danger pull-right icon-style'></span>
-            </div>
-          </div>
-        </div>
-</c:forEach>
+        <div class="col-lg-11 m-5"><h1><font color="#3498DB">Reportes ${fn:length(reportes)} </font> <a class="btn icon-btn btn-primary float-right" href="<%=request.getContextPath()%>/to/menu"><span class="glyphicon btn-glyphicon glyphicon-hand-left img-circle"></span> Regresar</a></h1></div>
 
+<section class="container mt-4 mb-4">
+<div class="container ">
+	<div class="row mb-3">
+		<c:forEach var="rep" items="${reportes}">
+		<div class="col-md-6 mb-3">
+			<div class="d-flex flex-row border rounded bg-success text-white">
+	  			<div class="p-0 w-25">
+	  			    <img src="<c:url value="https://pi4-v2-larav-pass-excel-api-gal05.c9users.io/images/${rep.imagen}"/>" class="img-thumbnail border-0" />
+	  				
+	  			</div>
+	  			<div class="pl-3 pt-2 pr-2 pb-2 w-75 border-left">
+	  					<h4 class="text-dark">Obs:  ${rep.observacion} </h4>
+	  					<h5 class="text-warning">aula: ${rep.salon}</h5>
+	  					<ul class="m-0 float-left" style="list-style: none; margin:0; padding: 0">
+	  						<li><i class="fab fa-facebook-square"></i>fecha:  ${rep.fecha}</li>
+	  						<li><i class="fab fa-twitter-square"></i>hora: ${rep.hora}</li>
+	  					</ul>
+						<p class="text-right m-0"><a href="#" class="btn btn-primary"><i class="far fa-user"></i> View Profile</a></p>
+				</div>
+			</div>
+		</div>
+		</c:forEach>
+	</div>
 
-
+</div>
         
 
         
