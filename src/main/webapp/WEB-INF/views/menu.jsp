@@ -59,7 +59,8 @@
     </div>
     <div class="rotater">
       <div class="btn btn-icon">
-        <i class="fa fa-area-chart "></i>
+      	<a href="<%=request.getContextPath()%>/to/menu/estadistica">
+        <i class="fa fa-area-chart "></i></a>
       </div>
     </div>
     <div class="rotater">
