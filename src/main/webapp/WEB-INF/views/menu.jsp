@@ -8,7 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Menu</title>
 
-<link href="<c:url value="/resources/css/menu.css"/>" rel="stylesheet">
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
 <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -17,16 +16,14 @@
 <body>
 
 
-
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/tecsup">Exit</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Sobre mi</a>
+        <a class="navbar-brand" href="/tecsup">Exit</a>
       </li>
     </ul>
     <span class="navbar-text">
@@ -35,39 +32,12 @@
     </span>
   </div>
 </nav>
-
-
   <div class="menu">
   <div class="btn trigger">
     <span class="line"></span>
   </div>
   <div class="icons">
-    <div class="rotater">
-      <div class="btn btn-icon">
-        <i class="fa fa-codepen"></i>
-      </div>
-    </div>
-    <div class="rotater">
-      <div class="btn btn-icon">
-        <i class="fa fa-facebook"></i>
-      </div>
-    </div>
-    <div class="rotater">
-      <div class="btn btn-icon">
-        <i class="fa fa-history"></i>
-      </div>
-    </div>
-    <div class="rotater">
-      <div class="btn btn-icon">
-        <i class="fa fa-area-chart "></i>
-      </div>
-    </div>
-    <div class="rotater">
-      <div class="btn btn-icon">
-        <i class="fa fa-desktop"></i>
-      </div>
-    </div>
-    <div  class="rotater">
+    <div  class="rotater" >
       <div  class="btn btn-icon">
         <a href="<%=request.getContextPath()%>/to/list/reportes">
         <i class="fa fa-bug"></i></a>        
@@ -75,12 +45,8 @@
     </div>
     <div class="rotater">
       <div class="btn btn-icon">
+      <a href="<%=request.getContextPath()%>/to/list/usuarios">
         <i class="fa fa-users"></i>
-      </div>
-    </div>
-    <div class="rotater">
-      <div class="btn btn-icon">
-        <i class="fa fa-behance"></i>
       </div>
     </div>
   </div>

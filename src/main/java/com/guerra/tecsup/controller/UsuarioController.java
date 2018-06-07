@@ -8,7 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import com.guerra.tecsup.model.Reporte;
+
+import com.guerra.tecsup.model.Usuario;
 import com.guerra.tecsup.services.ApiService;
 import com.guerra.tecsup.services.ApiServiceGenerator;
 
@@ -17,38 +18,32 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 @Controller
-public class ReporteController {
+public class UsuarioController {
+	
+private static final Logger logger = LoggerFactory.getLogger(UsuarioController.class);
+	
+	List<Usuario> usuarios=null;
+	
+	@GetMapping("/to/list/usuarios")
+	public String listUsuarios(@ModelAttribute("SpringWeb") Usuario usuarios, ModelMap model) {
+		
+		model.addAttribute("usuarios",listarUsuarios());
 
-	private static final Logger logger = LoggerFactory.getLogger(ReporteController.class);
-	
-	List<Reporte> reportes=null;
-	
-	@GetMapping("/to/list/reportes")
-	public String listReportes(@ModelAttribute("SpringWeb") Reporte reportes, ModelMap model) {
-		model.addAttribute("reportes",listarReportes());
-
-		return "reporte/reporteList";
-	}
-	
-	@GetMapping("/to/list/usuarios/editar/{rep.id}")
-	public String updateReportes(@ModelAttribute("SpringWeb") Reporte reportes, ModelMap model) {
-		//model.addAttribute("reportes", editarReportes);
-		return "reporte/reporteEditar";
+		return "usuario/UsuarioList";
 	}
 	
 	
-
 	
-	private List<Reporte> listarReportes()
+	private List<Usuario> listarUsuarios()
 	{
 		
 		ApiService service = ApiServiceGenerator.createService(ApiService.class);
 
-        Call<List<Reporte>> call = service.getReportes();
+        Call<List<Usuario>> call = service.getUsuarios();
 
-        call.enqueue(new Callback<List<Reporte>>() {
+        call.enqueue(new Callback<List<Usuario>>() {
             @Override
-            public void onResponse(Call<List<Reporte>> call, Response<List<Reporte>> response) {
+            public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
                 try {
 
                     int statusCode = response.code();
@@ -56,8 +51,8 @@ public class ReporteController {
 
                     if (response.isSuccessful()) {
 
-                        reportes = response.body();
-                        System.out.println("reportes: " + reportes);
+                        usuarios = response.body();
+                        System.out.println("usuarios: " + usuarios);
 
                     } else {
                         System.out.println("onError: " + response.errorBody().string());
@@ -73,15 +68,14 @@ public class ReporteController {
             }
 
             @Override
-            public void onFailure(Call<List<Reporte>> call, Throwable t) {
+            public void onFailure(Call<List<Usuario>> call, Throwable t) {
             	System.out.println(t.toString());
                 System.out.println( t.getMessage());
             }
 
         });
 	
-		return  reportes;
-	}
-	
+		return  usuarios;
+	}	
 	
 }

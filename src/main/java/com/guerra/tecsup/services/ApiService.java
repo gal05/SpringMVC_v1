@@ -8,12 +8,14 @@ import com.guerra.tecsup.model.Login;
 import com.guerra.tecsup.model.LoginOne;
 import com.guerra.tecsup.model.Reporte;
 import com.guerra.tecsup.model.Sede;
+import com.guerra.tecsup.model.Usuario;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -29,6 +31,21 @@ public interface ApiService {
     @GET("api/reporte")
     Call<List<Reporte>> getReportes();
     
+    @GET("api/listarUsuario")
+    Call<List<Usuario>> getUsuarios();
+    
+    
+    @FormUrlEncoded
+    @PUT("/posts/{id}")
+    Call<Reporte> updateReportes(@Path("id") int id,
+                          @Field("user_id") int user_id,
+                          @Field("maquinaria_id") String maquinaria_id,
+                          @Field("aula_id") int aula_id,
+    					  @Field("observacion") String observacion,
+    					  @Field("estadorep") String estadorep,
+    					  @Field("imagen") String imagen,
+    					  @Field("fecha") String fecha,
+    					  @Field("hora") String hora);
     
     @FormUrlEncoded
     @POST("oauth/token")

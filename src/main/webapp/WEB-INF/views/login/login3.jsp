@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PI4</title>
+<title>Login</title>
 
 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -22,11 +22,13 @@
 </head>
 <body>
 <div class="login" >
-	<h1>Sideri*</h1>
+	<img src="resources/imagen3.jpg" width="300" height="200">
+	<br>
+	<br>
     <form method="post" action="login">
-    	<input type="text" name="username" placeholder="Codigo" required="required" />
-        <input type="password" name="password" placeholder="Password" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Autentificar.</button>
+    	<input type="text" name="username" class="login-input" placeholder="Codigo" required="required" />
+        <input type="password" class="login-input" name="password" placeholder="Password" required="required" />
+        <button type="submit" class="login-button">Autentificar.</button>
     </form>
     <h3><font color="red">${login}</font></h3>
 </div>
