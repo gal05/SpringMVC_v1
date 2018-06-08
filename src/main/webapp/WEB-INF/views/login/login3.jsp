@@ -22,13 +22,13 @@
 </head>
 <body>
 <div class="login" >
-	<img src="resources/imagen3.jpg" width="300" height="200">
+	<img src="https://cdn.discordapp.com/attachments/447814002932842497/454587322617298945/Logo4.png" width="300" height="200">
 	<br>
 	<br>
     <form method="post" action="login">
     	<input type="text" name="username" class="login-input" placeholder="Codigo" required="required" />
         <input type="password" class="login-input" name="password" placeholder="Password" required="required" />
-        <button type="submit" class="login-button">Autentificar.</button>
+        <button type="submit" class="login-button">Iniciar Sesión</button>
     </form>
     <h3><font color="red">${login}</font></h3>
 </div>

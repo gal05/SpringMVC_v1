@@ -17,7 +17,7 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
     <label for="exampleInputEmail1">Sede</label>
-    <input type="text" class="form-control" name="placa" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="Lima">
+    <input type="text" class="form-control" name="placa" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Sede" value="Lima">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Laboratorio</label>

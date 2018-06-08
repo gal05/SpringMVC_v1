@@ -36,7 +36,7 @@
                     <p class"text-muted">Estado:  ${rep.estado} </p>
                     <p class"text-muted">Hora:  ${rep.hora} </p>
                 </div>
-                <a class="btn btn-secondary" href="<%=request.getContextPath()%>/to/list/reporte/editar/${rep.id}">Atender Reporter</a>
+                <a class="btn btn-secondary" href="<%=request.getContextPath()%>/to/list/reportes/editar/${rep.id}">Atender Reporter</a>
             </div>
           </div>
         </div>

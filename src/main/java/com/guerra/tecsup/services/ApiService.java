@@ -7,6 +7,7 @@ import com.guerra.tecsup.model.InfoUser;
 import com.guerra.tecsup.model.Login;
 import com.guerra.tecsup.model.LoginOne;
 import com.guerra.tecsup.model.Reporte;
+import com.guerra.tecsup.model.Respuesta;
 import com.guerra.tecsup.model.Sede;
 import com.guerra.tecsup.model.Usuario;
 
@@ -32,13 +33,10 @@ public interface ApiService {
     Call<List<Reporte>> getReportes();
     
     @GET("api/listarUsuario")
-    Call<List<Usuario>> getUsuarios();  
+    Call<List<Usuario>> getUsuarios(); 
     
-    
-    @FormUrlEncoded
     @POST("api/atenderRep/{id}")
-    Call <Reporte> updateReportes(@Field("estado") String estado);
-    					
+    Call<Respuesta> postRespuesta(@Path("id") int id);
     
     @FormUrlEncoded
     @POST("oauth/token")
