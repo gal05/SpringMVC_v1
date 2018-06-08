@@ -1,13 +1,21 @@
 package com.guerra.tecsup.controller;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.guerra.tecsup.model.Github;
+import com.guerra.tecsup.model.Login;
 import com.guerra.tecsup.model.Reporte;
 import com.guerra.tecsup.services.ApiService;
 import com.guerra.tecsup.services.ApiServiceGenerator;
@@ -30,14 +38,12 @@ public class ReporteController {
 		return "reporte/reporteList";
 	}
 	
-	@GetMapping("/to/list/usuarios/editar/{rep.id}")
-	public String updateReportes(@ModelAttribute("SpringWeb") Reporte reportes, ModelMap model) {
-		//model.addAttribute("reportes", editarReportes);
-		return "reporte/reporteEditar";
+	@GetMapping("/to/list/reporte/editar/{id}")
+	public String menu() {
+
+		return "/reporte/editarReporte";
 	}
 	
-	
-
 	
 	private List<Reporte> listarReportes()
 	{

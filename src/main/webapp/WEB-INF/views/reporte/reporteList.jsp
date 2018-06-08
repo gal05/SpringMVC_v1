@@ -23,22 +23,20 @@
         
         <c:forEach var="rep" items="${reportes}">
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <div class="thumbnail">
+          <div class="thumbnail" style="background:  #EBF5FB">
               <div class="caption">
-                <div class='col-lg-12'>
-                    <span class="glyphicon glyphicon-credit-card"></span>
-                    <span class="glyphicon glyphicon-trash pull-right text-primary"></span>
-                </div>
                 <div class='col-lg-12 well well-add-card'>
-                    <h4>Obs:  ${rep.observacion} </h4>
+                    <h4>Observación:   </h4>
+                    <h4>${rep.observacion}</h4>
                 </div>
                 <div class='col-lg-12'>
-                    <p>aula: ${rep.aula_id} </p>
-                    <p class"text-muted">fecha:  ${rep.fecha} </p>
+                    <p>Aula: ${rep.salon} </p>
+                    <p class"text-muted">Tipo:  ${rep.tipo} </p>
+                    <p class"text-muted">Fecha:  ${rep.fecha} </p>
+                    <p class"text-muted">Estado:  ${rep.estado} </p>
+                    <p class"text-muted">Hora:  ${rep.hora} </p>
                 </div>
-                <a href="/to/list/usuarios/editar/{rep.id}">Update</a>
-                <button type="button" class="btn btn-primary btn-xs btn-update btn-add-card">Update</button>
-                <span class='glyphicon glyphicon-exclamation-sign text-danger pull-right icon-style'></span>
+                <a class="btn btn-secondary" href="<%=request.getContextPath()%>/to/list/reporte/editar/${rep.id}">Atender Reporter</a>
             </div>
           </div>
         </div>

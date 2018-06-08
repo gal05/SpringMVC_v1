@@ -28,24 +28,17 @@ public interface ApiService {
     @GET("api/sede")
     Call<List<Sede>> getSedes();
 
-    @GET("api/reporte")
+    @GET("api/reporte_v2")
     Call<List<Reporte>> getReportes();
     
     @GET("api/listarUsuario")
-    Call<List<Usuario>> getUsuarios();
+    Call<List<Usuario>> getUsuarios();  
     
     
     @FormUrlEncoded
-    @PUT("/posts/{id}")
-    Call<Reporte> updateReportes(@Path("id") int id,
-                          @Field("user_id") int user_id,
-                          @Field("maquinaria_id") String maquinaria_id,
-                          @Field("aula_id") int aula_id,
-    					  @Field("observacion") String observacion,
-    					  @Field("estadorep") String estadorep,
-    					  @Field("imagen") String imagen,
-    					  @Field("fecha") String fecha,
-    					  @Field("hora") String hora);
+    @POST("api/atenderRep/{id}")
+    Call <Reporte> updateReportes(@Field("estado") String estado);
+    					
     
     @FormUrlEncoded
     @POST("oauth/token")

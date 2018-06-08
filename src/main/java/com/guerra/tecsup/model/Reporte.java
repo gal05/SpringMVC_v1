@@ -3,11 +3,13 @@ package com.guerra.tecsup.model;
 public class Reporte {
 	
   private int  id;
-  private int user_id;
-  private int maquinaria_id;
-  private int aula_id;
+  private int cliente;
+  private String sede;
+  private int pabellon;
+  private int salon;
+  private String tipo;
   private String observacion;
-  private String   estadorep;
+  private String   estado;
   private String  imagen;
   private String  fecha;
   private String  hora;
@@ -20,15 +22,17 @@ public class Reporte {
 public Reporte() {
 	super();
 }
-public Reporte(int id, int user_id, int maquinaria_id, int aula_id, String observacion, String estadorep, String imagen,
+public Reporte(int id, int cliente, String sede, int pabellon, int salon, String tipo, String observacion, String estado, String imagen,
 		String fecha, String hora) {
 	super();
 	this.id = id;
-	this.user_id = user_id;
-	this.maquinaria_id = maquinaria_id;
-	this.aula_id = aula_id;
+	this.cliente = cliente;
+	this.sede = sede;
+	this.pabellon = pabellon;
+	this.salon = salon;
+	this.tipo = tipo;
 	this.observacion = observacion;
-	this.estadorep = estadorep;
+	this.estado = estado;
 	this.imagen = imagen;
 	this.fecha = fecha;
 	this.hora = hora;
@@ -39,23 +43,35 @@ public int getId() {
 public void setId(int id) {
 	this.id = id;
 }
-public int getUser_id() {
-	return user_id;
+public int getCliente() {
+	return cliente;
 }
-public void setUser_id(int user_id) {
-	this.user_id = user_id;
+public void setCliente(int cliente) {
+	this.cliente = cliente;
 }
-public int getMaquinaria_id() {
-	return maquinaria_id;
+public String getSede() {
+	return sede;
 }
-public void setMaquinaria_id(int maquinaria_id) {
-	this.maquinaria_id = maquinaria_id;
+public void setSede(String sede) {
+	this.sede = sede;
 }
-public int getAula_id() {
-	return aula_id;
+public int getPabellon() {
+	return pabellon;
 }
-public void setAula_id(int aula_id) {
-	this.aula_id = aula_id;
+public void setPabellon(int pabellon) {
+	this.pabellon = pabellon;
+}
+public int getSalon() {
+	return salon;
+}
+public void setSalon(int salon) {
+	this.salon = salon;
+}
+public String getTipo() {
+	return tipo;
+}
+public void setTipo(String tipo) {
+	this.tipo = tipo;
 }
 public String getObservacion() {
 	return observacion;
@@ -63,11 +79,11 @@ public String getObservacion() {
 public void setObservacion(String observacion) {
 	this.observacion = observacion;
 }
-public String getEstadorep() {
-	return estadorep;
+public String getEstado() {
+	return estado;
 }
-public void setEstadorep(String estadorep) {
-	this.estadorep = estadorep;
+public void setEstado(String estado) {
+	this.estado = estado;
 }
 public String getImagen() {
 	return imagen;
